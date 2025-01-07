@@ -2,5 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('cmsDashboard/', views.cmsDashboard, name='cmsDashboard'),
+    path('Ana_Sayfa_Dashboard/', views.cmsDashboard, name='cmsDashboard'),
+    path('Icerik_Yönetim_Dashboard/', views.cmsContentsUpdate, name='cmsContentsUpdate'),
 ]
