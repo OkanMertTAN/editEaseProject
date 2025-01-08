@@ -1,11 +1,14 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #d9d9d9;
 }
 
 .sidebar {
-    width: 200px;
+    width: 200px; /* Başlangıç genişliği */
+    overflow: hidden; /* İçerik taşmasını gizler */
+    transition: width 0.3s; /* Geçiş animasyonu */
+    pointer-events: auto; /* Varsayılan olarak etkileşim sağlanır */
     background-color: #222;
     color: #fff;
     height: 100vh;
@@ -14,6 +17,11 @@ body {
     left: 0;
     padding-top: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar.hidden {
+    width: 0; /* Gizlendiğinde genişlik sıfır */
+    pointer-events: none; /* Etkileşimi kapatır */
 }
 
 .sidebar a {
@@ -29,18 +37,24 @@ body {
 }
 
 .main-content {
-    margin-left: 200px;
+    margin-left: 200px; /* Sidebar başlangıç genişliği */
+    transition: margin-left 0.3s; /* Geçiş animasyonu */
     padding: 20px;
 }
 
 .menu-button {
     font-size: 18px;
-    background: none;
+    background: #222;
     border: none;
     color: #fff;
     cursor: pointer;
     padding: 10px 20px;
     text-align: left;
+    position: fixed; /* Buton sabit konumda kalır */
+    top: 10px;
+    left: 10px; /* Menü butonunun yeri */
+    z-index: 1000; /* Menü ve içerik üzerinde görünür */
+    transition: background-color 0.3s;
 }
 
 .menu-button:hover {

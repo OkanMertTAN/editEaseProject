@@ -18,18 +18,23 @@
     </style>
 </head>
 <body>
-    <div class="sidebar">
-        <button class="menu-button">☰ Menü</button> 
+    <button class="menu-button" onclick="toggleSidebar()">☰ Menü</button>
+
+    <div class="sidebar hidden" id="mySidebar">
         <br>
         <br>
         <a href="{% url 'cmsDashboard' %}">Ana Sayfa</a>
         <a href="{% url 'cmsContentsUpdate' %}">İçerik Yönetim Paneli</a>
         <a href="#">İçerikleri Gösterme</a>
-
+        
         <a href="#">Çıkış</a>
     </div>
+
+    
     <div class="main-content">
         <h1 style="text-align: center;">CMS - Ana Sayfa</h1>
     </div>
+
+    <script src="{% static 'js/hamburgerMenuScripts.js' %}"></script>
 </body>
 </html>
