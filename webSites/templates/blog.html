@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+{% load static %}
+
 
 <head>
   <!-- Basic -->
@@ -36,7 +38,7 @@
   <header class="header_section innerpage_header">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="{% url 'webSites' %}">
           <span>
             Shapel
           </span>
@@ -51,11 +53,11 @@
             </button>
             <div id="myNav" class="overlay">
               <div class="overlay-content">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="service.html">Service</a>
-                <a href="blog.html">Blog</a>
+                <a href="{% url 'webSites' %}">Home</a>
+                <a href="{% url 'webSitesAbout' %}">About</a>
+                <a href="{% url 'webSitesGallery' %}">Gallery</a>
+                <a href="{% url 'webSitesService' %}">Service</a>
+                <a href="{% url 'webSitesBlog' %}">Blog</a>
               </div>
             </div>
           </div>
@@ -125,7 +127,7 @@
         <div class="col-md-6 col-lg-3">
           <div class="info_insta">
             <h4>
-              <a href="index.html" class="navbar-brand m-0 p-0">
+              <a href="{% url 'webSites' %}" class="navbar-brand m-0 p-0">
                 <span>
                   Shapel
                 </span>
@@ -210,12 +212,12 @@
 
 
   <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
   <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
 
   <!-- custom js -->
-  <script src="js/custom.js"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
 
 </body>
 
