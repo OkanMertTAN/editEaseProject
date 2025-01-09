@@ -1,41 +1,67 @@
-function toggleMenu() {
-    const menu = document.getElementById("galleryMenu");
+function toggleMenu(menuId) {
+    const menus = [
+        document.getElementById("anaSayfaMenu"),
+        document.getElementById("galleryMenu"),
+        document.getElementById("anaSayfaPersonelMenu"),
+        document.getElementById("hakkimizdaMenu"),
+        document.getElementById("referansMenu"),
+        document.getElementById("servisMenu"),
+        document.getElementById("contactMenu"),
+        document.getElementById("mediaMenu"),
+    ];
     const overlay = document.getElementById("overlay");
-    
-    // Eğer menü gizli ise, menüyü göster ve arka planı karart
+
+    // Tüm menüleri kapat
+    menus.forEach(menu => {
+        if (menu.id !== menuId) {
+            menu.style.transform = "translateY(-20px)";
+            menu.style.opacity = "0";
+            setTimeout(() => {
+                menu.style.display = "none";
+            }, 500);
+        }
+    });
+
+    // Tıklanan menüyü aç/kapat
+    const menu = document.getElementById(menuId);
     if (menu.style.display === "none" || menu.style.display === "") {
         menu.style.display = "block"; // Menü görünür hale gelir
-        overlay.style.display = "block"; // Arka plan karartılır
-        
-        // Animasyonu başlatmak için
+        overlay.style.display = "block"; // Karartma görünür hale gelir
         setTimeout(() => {
-            menu.style.transform = "translateY(0)"; // Menü aşağı kayar
-            menu.style.opacity = "1"; // Menü görünür hale gelir
-        }, 10); // Geçişin başlaması için küçük bir zaman aralığı bırakıyoruz
+            menu.style.transform = "translateY(0)";
+            menu.style.opacity = "1";
+        }, 10);
     } else {
-        // Menü kapanırken animasyon
-        menu.style.transform = "translateY(-20px)"; // Menü yukarı kayar
-        menu.style.opacity = "0"; // Menü kaybolur
-        
-        // Menü ve karartmayı gizleme
+        menu.style.transform = "translateY(-20px)";
+        menu.style.opacity = "0";
         setTimeout(() => {
-            menu.style.display = "none"; // Menü gizlenir
-            overlay.style.display = "none"; // Karartma kalkar
-        }, 500); // Animasyonun bitmesi için 500ms bekleriz
+            menu.style.display = "none";
+            overlay.style.display = "none";
+        }, 500);
     }
 }
 
-// Karartma alanına tıklanarak menüyü kapatmak için
+// Karartma alanına tıklanarak tüm menüleri kapatmak için
 document.getElementById("overlay").addEventListener("click", function () {
-    const menu = document.getElementById("galleryMenu");
+    const menus = [
+        document.getElementById("anaSayfaMenu"),
+        document.getElementById("galleryMenu"),
+        document.getElementById("anaSayfaPersonelMenu"),
+        document.getElementById("hakkimizdaMenu"),
+        document.getElementById("referansMenu"),
+        document.getElementById("servisMenu"),
+        document.getElementById("contactMenu"),
+        document.getElementById("mediaMenu"),
+    ];
     const overlay = document.getElementById("overlay");
-    
-    menu.style.transform = "translateY(-20px)"; // Menü yukarı kayar
-    menu.style.opacity = "0"; // Menü kaybolur
-    
-    // Menü ve karartmayı gizleme
-    setTimeout(() => {
-        menu.style.display = "none"; // Menü gizlenir
-        overlay.style.display = "none"; // Karartma kalkar
-    }, 500); // Animasyonun bitmesi için 500ms bekleriz
+
+    menus.forEach(menu => {
+        menu.style.transform = "translateY(-20px)";
+        menu.style.opacity = "0";
+        setTimeout(() => {
+            menu.style.display = "none";
+        }, 500);
+    });
+
+    overlay.style.display = "none";
 });

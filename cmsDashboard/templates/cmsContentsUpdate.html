@@ -35,37 +35,150 @@
         
 
         
-        
-       
-
         <div id="overlay"></div> <!-- Karartma arka planı -->
-        <h1 class="section-title" onclick="toggleMenu()">Galeri</h1>
-        <div class="hidden-content" id="galleryMenu">
-    <form>
-        <label>Otel Adı:</label>
-        <input type="text" id="fotoName" name="fotoName"><br>
-        
-        <label>Açıklama:</label>
-        <textarea id="statementWeb" name="statementWeb" rows="4" cols="50" placeholder="Açıklama"></textarea>
-        
-        <br>
-        <label>Resim Yükle:</label>
-        <input type="file" id="fotoFile" name="fotoFile"><br>
 
-        <label>Bir otel seçenek seçin:</label>
-        <select id="optionWeb" name="optionWeb">
-            <option value="1">Seçenek 1</option>
-            <option value="2">Seçenek 2</option>
-            <option value="3">Seçenek 3</option>
-        </select>
-        <br>
+
+<div>
+    <h1 class="section-title" onclick="toggleMenu('galleryMenu')">Otel Tasarımları Ekle</h1>
+    <div class="hidden-content" id="galleryMenu">
+        <form>
+            <label>Otel Adı:</label>
+            <input type="text" id="fotoName" name="fotoName"><br>
+            
+            <label>Açıklama:</label>
+            <textarea id="statementWeb" name="statementWeb" rows="4" cols="50" placeholder="Açıklama"></textarea>
+            <br>
+            <label>Resim Yükle:</label>
+            <input type="file" id="fotoFile" name="fotoFile"><br>
+
+            <label>Bir otel seçenek seçin:</label>
+            <select id="optionWeb" name="optionWeb">
+                <option value="1">Seçenek 1</option>
+                <option value="2">Seçenek 2</option>
+                <option value="3">Seçenek 3</option>
+            </select>
+            <br>
+            <input type="submit" value="Submit">
+            <input type="reset">
+        </form>
+    </div>
+</div>
+
+<div>
+    <h1 class="section-title" onclick="toggleMenu('anaSayfaMenu')">Ana Sayfa</h1>
+    <div class="hidden-content" id="anaSayfaMenu">
+        <h3>Ana Sayfa Ortası</h3>
+        <form>
+            <label>Ana Sayfa Başlık:</label>
+            <input type="text"><br>
+            <label>Ana Sayfa için Resim Yükle:</label>
+            <input type="file"><br>
+            <input type="submit" value="Submit">
+            <input type="reset">
+        </form> 
+    </div>
+</div>
+
+
+<div>
+    <h1 class="section-title" onclick="toggleMenu('anaSayfaPersonelMenu')">Çalışanlar Ekle</h1>
+    <div class="hidden-content" id="anaSayfaPersonelMenu">
+        <form>
+        <label>Ana Sayfa Başlık:</label>
+        <input type="text"><br>
+        <label>Mevkisi:</label>
+        <input type="text"><br>
+        
+            <label>Açıklama:</label>
+            <textarea rows="4" cols="50" placeholder="Açıklama"></textarea>
+        
+        <label>Kişinin Fotosu:</label>
+        <input type="file"><br>
 
         <input type="submit" value="Submit">
         <input type="reset">
     </form>
+    </div>
 </div>
 
+<div>
+    <h1 class="section-title" onclick="toggleMenu('hakkimizdaMenu')">Hakkımızda</h1>
+
+    <div class="hidden-content" id="hakkimizdaMenu">
+        <h3>Hakımızda</h3>
+        <form>
+            
+                <label>Açıklama:</label>
+                <textarea rows="4" cols="50" placeholder="Açıklama"></textarea><br>
+                <label>Kişinin Fotosu:</label>
+                <input type="file"><br>
+                <input type="submit" value="Submit">
+                <input type="reset">
+        </form>
+    </div>
+</div>
+      
+<div>
+    <h1 class="section-title" onclick="toggleMenu('referansMenu')">Referanslar</h1>
+    <div class="hidden-content" id="referansMenu">
+        <form>
+            <label>Adı</label>
+            <input type="text"><br>
+            <label>Referanslar URL(İsteğe Bağlı):</label>
+            <input type="url" placeholder="https://" pattern="https://.*" size="40" required /> <br>
+            <input type="submit" value="Submit">
+            <input type="reset">
+        </form>
+    </div>
+    
+</div>
+<div>
+    <h1 class="section-title" onclick="toggleMenu('servisMenu')">Servis</h1>
+    <div class="hidden-content" id="servisMenu">
+    <form>
+        <label>Adı:</label>
+        <input type="text"><br>
+        <label>Foto:</label>
+        <input type="file"><br>
+        <label>Açıklama:</label>
+        <textarea id="statementWeb" name="statementWeb" rows="4" cols="50" placeholder="Açıklama"></textarea>
+        <input type="submit" value="Submit">
+        <input type="reset">
+    </form>
+</div>
+</div>
+
+<div>
+    <h1 class="section-title" onclick="toggleMenu('contactMenu')">İletişim</h1>
+    <div class="hidden-content" id="contactMenu">
+        <h3>İletişim</h3>
+        <form>
+            <label>Firmamızın Adı:</label>
+            <input type="text"><br>
+            <label>Adres:</label>
+            <input type="text"><br>
+            <label>Telefon:</label>
+            <input type="tel"><br>
+            <label>Faks:</label>
+            <input type="tel"><br>
+        </form>
+    </div>
+</div>
+<div>
+        <h1 class="section-title" onclick="toggleMenu('mediaMenu')">Sosyal Medyalar</h1>
+        <div class="hidden-content" id="mediaMenu">
+            <form>
+                <label>İnstagram URL(İsteğe Bağlı):</label>
+                <input type="url" id="website_url" placeholder="https://"pattern="https://.*" size="40" required />
+                <label>Linkened URL(İsteğe Bağlı):</label>
+                <input type="url" id="website_url" placeholder="https://"pattern="https://.*" size="40" required />
+                <label>Facebook URL(İsteğe Bağlı):</label>
+                <input type="url" id="website_url" placeholder="https://"pattern="https://.*" size="40" required />
+            </form>
+        </div>
         
+</div>
+
 
     <script src="{% static 'js/hamburgerMenuScripts.js' %}"></script>
     <script src="{% static 'js/menuForm.js' %}"></script>
