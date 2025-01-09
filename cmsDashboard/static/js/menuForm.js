@@ -8,6 +8,7 @@ function toggleMenu(menuId) {
         document.getElementById("servisMenu"),
         document.getElementById("contactMenu"),
         document.getElementById("mediaMenu"),
+        document.getElementById("anaSayfaFotoMenu"),
     ];
     const overlay = document.getElementById("overlay");
 
@@ -52,6 +53,7 @@ document.getElementById("overlay").addEventListener("click", function () {
         document.getElementById("servisMenu"),
         document.getElementById("contactMenu"),
         document.getElementById("mediaMenu"),
+        document.getElementById("anaSayfaFotoMenu"),
     ];
     const overlay = document.getElementById("overlay");
 

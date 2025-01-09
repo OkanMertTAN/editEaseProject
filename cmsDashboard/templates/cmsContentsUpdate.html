@@ -68,30 +68,43 @@
     <h1 class="section-title" onclick="toggleMenu('anaSayfaMenu')">Ana Sayfa</h1>
     <div class="hidden-content" id="anaSayfaMenu">
         <h3>Ana Sayfa Ortası</h3>
-        <form>
+        <form action="" method="POST">
+            {% csrf_token %}
             <label>Ana Sayfa Başlık:</label>
-            <input type="text"><br>
-            <label>Ana Sayfa için Resim Yükle:</label>
-            <input type="file"><br>
+            <input type="text" name="mainText"><br>
+            <label>Açıklama:</label>
+            <textarea id="statementWeb" name="mainDescText" rows="4" cols="50" placeholder="Açıklama"></textarea>
             <input type="submit" value="Submit">
             <input type="reset">
         </form> 
     </div>
 </div>
 
+<div>
+    <h1 class="section-title" onclick="toggleMenu('anaSayfaFotoMenu')">Ana Sayfa Foto</h1>
+    <div class="hidden-content" id="anaSayfaFotoMenu">
+        <h3>Ana Sayfa Ortası Foto</h3>
+        <form>
+            <label>Ana Sayfa için Resim Yükle:</label>
+            <input type="file"><br>
+            <input type="submit" value="Submit">
+            <input type="reset">
+        </form>
+    </div>
+</div>
 
 <div>
     <h1 class="section-title" onclick="toggleMenu('anaSayfaPersonelMenu')">Çalışanlar Ekle</h1>
     <div class="hidden-content" id="anaSayfaPersonelMenu">
         <form>
-        <label>Ana Sayfa Başlık:</label>
+        <label>Çalışan Adı:</label>
         <input type="text"><br>
         <label>Mevkisi:</label>
         <input type="text"><br>
         
-            <label>Açıklama:</label>
-            <textarea rows="4" cols="50" placeholder="Açıklama"></textarea>
-        
+        <label>Açıklama:</label>
+        <textarea rows="4" cols="50" placeholder="Açıklama"></textarea>
+        <br>
         <label>Kişinin Fotosu:</label>
         <input type="file"><br>
 
@@ -161,6 +174,9 @@
             <input type="tel"><br>
             <label>Faks:</label>
             <input type="tel"><br>
+
+            <input type="submit" value="Submit">
+            <input type="reset">
         </form>
     </div>
 </div>
@@ -174,6 +190,9 @@
                 <input type="url" id="website_url" placeholder="https://"pattern="https://.*" size="40" required />
                 <label>Facebook URL(İsteğe Bağlı):</label>
                 <input type="url" id="website_url" placeholder="https://"pattern="https://.*" size="40" required />
+
+                <input type="submit" value="Submit">
+                <input type="reset">
             </form>
         </div>
         
