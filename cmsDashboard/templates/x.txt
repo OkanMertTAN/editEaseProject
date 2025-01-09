@@ -1,0 +1,124 @@
+ <div>
+            <h1>Ana Sayfa</h1>
+        <div class="hidden-content">
+            <h3>Ana Sayfa Ortası</h3>
+            <form>
+                <label>Ana Sayfa Başlık:</label>
+                <input type="text"><br>
+                <label>Ana Sayfa için Resim Yükle:</label>
+                <input type="file"><br>
+                <input type="submit" value="Submit">
+                <input type="reset">
+            </form> 
+        </div>
+        
+        <div>
+            <h3>Ana Sayfa Kişiler Ekle</h3>
+            <form>
+                <label>Ana Sayfa Başlık:</label>
+                <input type="text"><br>
+                <label>Mevkisi:</label>
+                <input type="text"><br>
+                
+                    <label>Açıklama:</label>
+                    <textarea rows="4" cols="50" placeholder="Açıklama"></textarea>
+                
+                <label>Kişinin Fotosu:</label>
+                <input type="file"><br>
+    
+                <input type="submit" value="Submit">
+                <input type="reset">
+            </form>
+        </div>
+        </div>
+        <div>
+            <h1>Hakkımızda</h1>
+
+            <div class="hidden-content">
+                <h3>Hakımızda</h3>
+                <form>
+                    
+                        <label>Açıklama:</label>
+                        <textarea rows="4" cols="50" placeholder="Açıklama"></textarea><br>
+                        <label>Kişinin Fotosu:</label>
+                        <input type="file"><br>
+                        <input type="submit" value="Submit">
+                        <input type="reset">
+                </form>
+            </div>
+            <div>
+                <h3>Referanslar</h3>
+                <form>
+                    <label>Adı</label>
+                    <input type="text"><br>
+                    <label>Referanslar URL(İsteğe Bağlı):</label>
+                    <input type="url" placeholder="https://" pattern="https://.*" size="40" required /> <br>
+                    <input type="submit" value="Submit">
+                    <input type="reset">
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        ----
+
+
+
+
+
+
+
+
+
+
+
+
+        <div>
+            <h1>Servis</h1>
+            <div class="hidden-content">
+            <form>
+                <label>Adı:</label>
+                <input type="text"><br>
+                <label>Foto:</label>
+                <input type="file"><br>
+                <label>Açıklama:</label>
+                <textarea id="statementWeb" name="statementWeb" rows="4" cols="50" placeholder="Açıklama"></textarea>
+                <input type="submit" value="Submit">
+                <input type="reset">
+            </form>
+        </div>
+    </div>
+        <div>
+            <h1>İletişim</h1>
+            <div class="hidden-content">
+                <h3>İletişim</h3>
+                <form>
+                    <label>Firmamızın Adı:</label>
+                    <input type="text"><br>
+                    <label>Adres:</label>
+                    <input type="text"><br>
+                    <label>Telefon:</label>
+                    <input type="tel"><br>
+                    <label>Faks:</label>
+                    <input type="tel"><br>
+                </form>
+            </div>
+            <div>
+                <h3>Sosyal Medyalar</h3>
+                <form>
+                    <label>İnstagram URL(İsteğe Bağlı):</label>
+                    <input type="url" id="website_url" placeholder="https://"pattern="https://.*" size="40" required />
+                    <label>Linkened URL(İsteğe Bağlı):</label>
+                    <input type="url" id="website_url" placeholder="https://"pattern="https://.*" size="40" required />
+                    <label>Facebook URL(İsteğe Bağlı):</label>
+                    <input type="url" id="website_url" placeholder="https://"pattern="https://.*" size="40" required />
+                </form>
+            </div>
+        </div>
+        
+    </div>

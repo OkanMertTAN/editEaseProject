@@ -1,72 +1,203 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #d9d9d9;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f9f9f9; /* Ferah açık bir renk */
+    color: #333; /* Daha okunabilir bir koyu gri */
 }
 
 .sidebar {
-    width: 200px; /* Başlangıç genişliği */
-    overflow: hidden; /* İçerik taşmasını gizler */
-    transition: width 0.3s; /* Geçiş animasyonu */
-    pointer-events: auto; /* Varsayılan olarak etkileşim sağlanır */
-    background-color: #222;
-    color: #fff;
+    width: 250px; /* Biraz daha geniş bir sidebar */
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+    pointer-events: auto;
+    background-color: #ffffff; /* Ferah beyaz sidebar */
+    color: #333; /* Metin için koyu ton */
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     padding-top: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Hafif bir gölge */
+    border-right: 1px solid #e6e6e6; /* Ayrım için yumuşak bir çizgi */
 }
 
 .sidebar.hidden {
-    width: 0; /* Gizlendiğinde genişlik sıfır */
-    pointer-events: none; /* Etkileşimi kapatır */
+    width: 0;
+    pointer-events: none;
 }
 
 .sidebar a {
     display: block;
-    padding: 10px 20px;
-    color: #fff;
+    padding: 12px 20px;
+    color: #333;
     text-decoration: none;
     font-size: 16px;
+    border-radius: 6px; /* Yuvarlatılmış köşeler */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Geçiş efekti */
 }
 
 .sidebar a:hover {
-    background-color: #575757;
+    background-color: #f0f0f0; /* Hover için açık gri */
+    color: #0078d7; /* Pastel mavi ton */
 }
 
 .main-content {
-    margin-left: 200px; /* Sidebar başlangıç genişliği */
-    transition: margin-left 0.3s; /* Geçiş animasyonu */
+    margin-left: 250px; /* Sidebar başlangıç genişliği */
+    transition: margin-left 0.3s ease-in-out;
     padding: 20px;
 }
 
 .menu-button {
     font-size: 18px;
-    background: #222;
+    background: #0078d7; /* Yumuşak mavi ton */
     border: none;
     color: #fff;
     cursor: pointer;
     padding: 10px 20px;
     text-align: left;
-    position: fixed; /* Buton sabit konumda kalır */
+    position: fixed;
     top: 10px;
-    left: 10px; /* Menü butonunun yeri */
-    z-index: 1000; /* Menü ve içerik üzerinde görünür */
-    transition: background-color 0.3s;
+    left: 10px;
+    z-index: 1000;
+    border-radius: 6px; /* Yuvarlatılmış köşeler */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .menu-button:hover {
-    background-color: #575757;
+    background-color: #005fb3; /* Daha koyu mavi hover efekti */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
 }
 
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #222;
-    color: #fff;
+    background-color: #ffffff; /* Beyaz header */
+    color: #333;
     padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    border-bottom: 1px solid #e6e6e6;
+    border-radius: 0 0 6px 6px; /* Alt köşelerde yuvarlatma */
+}
+
+form {
+    background-color: #ffffff; /* Beyaz arka plan */
+    padding: 20px;
+    border-radius: 8px; /* Yuvarlatılmış köşeler */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    margin: 20px 0;
+    max-width: 600px; /* Form genişliği */
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px; /* Etiketle alan arasında boşluk */
+    font-weight: bold;
+    color: #333; /* Koyu gri yazı rengi */
+}
+
+form input[type="text"],
+form input[type="url"],
+form input[type="file"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Açık gri kenarlık */
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Geçiş efekti */
+}
+
+form input[type="text"]:focus,
+form input[type="url"]:focus,
+form input[type="file"]:focus,
+form textarea:focus,
+form select:focus {
+    border-color: #0078d7; /* Mavi kenarlık */
+    box-shadow: 0 0 5px rgba(0, 120, 215, 0.5); /* Hafif mavi gölge */
+    outline: none; /* Varsayılan outline kaldırılır */
+}
+
+form textarea {
+    resize: vertical; /* Yatay boyutlandırmayı kapatır */
+}
+
+form input[type="submit"],
+form input[type="reset"] {
+    background-color: #0078d7; /* Mavi düğme */
+    color: #fff; /* Beyaz yazı */
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover,
+form input[type="reset"]:hover {
+    background-color: #005fb3; /* Daha koyu mavi hover efekti */
+}
+
+form input[type="submit"]:active,
+form input[type="reset"]:active {
+    background-color: #004080; /* Daha da koyu mavi aktif efekti */
+}
+
+form input[type="submit"]:disabled,
+form input[type="reset"]:disabled {
+    background-color: #ccc; /* Pasif durum */
+    cursor: not-allowed;
+}
+
+form select {
+    appearance: none; /* Varsayılan tarayıcı stili kaldırılır */
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+}
+
+/* Karartma arka planı için */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam siyah */
+    z-index: 999; /* Menünün arkasında kalmasın */
+    display: none; /* Başlangıçta gizli */
+    transition: opacity 0.3s ease; /* Karartma geçiş efekti */
+}
+
+/* Menü içerik */
+.hidden-content {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+    display: none; /* Başlangıçta gizli olacak */
+    position: relative;
+    z-index: 1000; /* Karartma katmanının üstünde */
+    transform: translateY(-20px); /* Menüyü başlangıçta yukarıda tutar */
+    opacity: 0; /* Menüyü görünmez yapar */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Menü açılırken ve kapanırken animasyon */
+}
+
+/* Tıklanabilir başlık */
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.section-title:hover {
+    color: #007BFF;
 }
