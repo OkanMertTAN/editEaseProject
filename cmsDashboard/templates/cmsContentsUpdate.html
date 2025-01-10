@@ -41,7 +41,7 @@
 <div>
     <h1 class="section-title" onclick="toggleMenu('galleryMenu')">Otel Tasarımları Ekle</h1>
     <div class="hidden-content" id="galleryMenu">
-        <form>
+        <form action="" method="POST"> {% csrf_token %}
             <label>Otel Adı:</label>
             <input type="text" id="fotoName" name="fotoName"><br>
             
@@ -58,6 +58,9 @@
                 <option value="3">Seçenek 3</option>
             </select>
             <br>
+
+            <input type="hidden" name="formType" value="otelForm">
+
             <input type="submit" value="Submit">
             <input type="reset">
         </form>
@@ -68,12 +71,15 @@
     <h1 class="section-title" onclick="toggleMenu('anaSayfaMenu')">Ana Sayfa</h1>
     <div class="hidden-content" id="anaSayfaMenu">
         <h3>Ana Sayfa Ortası</h3>
-        <form action="" method="POST">
+        <form action="" method="POST">{% csrf_token %}
             {% csrf_token %}
             <label>Ana Sayfa Başlık:</label>
             <input type="text" name="mainText"><br>
             <label>Açıklama:</label>
             <textarea id="statementWeb" name="mainDescText" rows="4" cols="50" placeholder="Açıklama"></textarea>
+
+            <input type="hidden" name="formType" value="anaSayfaOrtaForm">
+
             <input type="submit" value="Submit">
             <input type="reset">
         </form> 
@@ -84,9 +90,12 @@
     <h1 class="section-title" onclick="toggleMenu('anaSayfaFotoMenu')">Ana Sayfa Foto</h1>
     <div class="hidden-content" id="anaSayfaFotoMenu">
         <h3>Ana Sayfa Ortası Foto</h3>
-        <form>
+        <form action="" method="POST"> {% csrf_token %}
             <label>Ana Sayfa için Resim Yükle:</label>
-            <input type="file"><br>
+            <input type="file" name="anaSayfaFoto"><br>
+
+            <input type="hidden" name="formType" value="anaSayfaFotoForm">
+
             <input type="submit" value="Submit">
             <input type="reset">
         </form>
@@ -96,17 +105,19 @@
 <div>
     <h1 class="section-title" onclick="toggleMenu('anaSayfaPersonelMenu')">Çalışanlar Ekle</h1>
     <div class="hidden-content" id="anaSayfaPersonelMenu">
-        <form>
+        <form action="" method="POST"> {% csrf_token %}
         <label>Çalışan Adı:</label>
-        <input type="text"><br>
+        <input type="text" name="personelName"><br>
         <label>Mevkisi:</label>
         <input type="text"><br>
         
         <label>Açıklama:</label>
-        <textarea rows="4" cols="50" placeholder="Açıklama"></textarea>
+        <textarea rows="4" cols="50" placeholder="Açıklama" name="personelDesc"></textarea>
         <br>
         <label>Kişinin Fotosu:</label>
-        <input type="file"><br>
+        <input type="file" name="personelFoto"><br>
+        
+        <input type="hidden" name="formType" value="personelForm">
 
         <input type="submit" value="Submit">
         <input type="reset">
@@ -119,12 +130,15 @@
 
     <div class="hidden-content" id="hakkimizdaMenu">
         <h3>Hakımızda</h3>
-        <form>
+        <form action="" method="POST"> {% csrf_token %}
             
                 <label>Açıklama:</label>
-                <textarea rows="4" cols="50" placeholder="Açıklama"></textarea><br>
+                <textarea rows="4" cols="50" placeholder="Açıklama" name="aboutText"></textarea><br>
                 <label>Kişinin Fotosu:</label>
-                <input type="file"><br>
+                <input type="file" name="aboutFile"><br>
+
+                <input type="hidden" name="formType" value="aboutForm">
+
                 <input type="submit" value="Submit">
                 <input type="reset">
         </form>
@@ -134,11 +148,14 @@
 <div>
     <h1 class="section-title" onclick="toggleMenu('referansMenu')">Referanslar</h1>
     <div class="hidden-content" id="referansMenu">
-        <form>
+        <form action="" method="POST"> {% csrf_token %}
             <label>Adı</label>
-            <input type="text"><br>
+            <input type="text" name="referansName"><br>
             <label>Referanslar URL(İsteğe Bağlı):</label>
-            <input type="url" placeholder="https://" pattern="https://.*" size="40" required /> <br>
+            <input type="url" placeholder="https://" pattern="https://.*" size="40" required  name="referansUrl"/> <br>
+
+            <input type="hidden" name="formType" value="referansForm">
+
             <input type="submit" value="Submit">
             <input type="reset">
         </form>
@@ -148,13 +165,16 @@
 <div>
     <h1 class="section-title" onclick="toggleMenu('servisMenu')">Servis</h1>
     <div class="hidden-content" id="servisMenu">
-    <form>
+    <form action="" method="POST"> {% csrf_token %}
         <label>Adı:</label>
-        <input type="text"><br>
+        <input type="text" name="serviceName"><br>
         <label>Foto:</label>
-        <input type="file"><br>
+        <input type="file" name="serviceFoto"><br>
         <label>Açıklama:</label>
-        <textarea id="statementWeb" name="statementWeb" rows="4" cols="50" placeholder="Açıklama"></textarea>
+        <textarea id="statementWeb" name="serviceDesc" rows="4" cols="50" placeholder="Açıklama"></textarea>
+
+        <input type="hidden" name="formType" value="aboutForm">
+
         <input type="submit" value="Submit">
         <input type="reset">
     </form>
@@ -165,15 +185,17 @@
     <h1 class="section-title" onclick="toggleMenu('contactMenu')">İletişim</h1>
     <div class="hidden-content" id="contactMenu">
         <h3>İletişim</h3>
-        <form>
+        <form action="" method="POST"> {% csrf_token %}
             <label>Firmamızın Adı:</label>
-            <input type="text"><br>
+            <input type="text" name="contactName"><br>
             <label>Adres:</label>
-            <input type="text"><br>
+            <input type="text" name="contactAdress"><br>
             <label>Telefon:</label>
-            <input type="tel"><br>
+            <input type="tel" name="contactTel"><br>
             <label>Faks:</label>
-            <input type="tel"><br>
+            <input type="tel" name="contactFaks"><br>
+            
+            <input type="hidden" name="formType" value="contactForm">
 
             <input type="submit" value="Submit">
             <input type="reset">
@@ -183,13 +205,15 @@
 <div>
         <h1 class="section-title" onclick="toggleMenu('mediaMenu')">Sosyal Medyalar</h1>
         <div class="hidden-content" id="mediaMenu">
-            <form>
+            <form action="" method="POST"> {% csrf_token %}
                 <label>İnstagram URL(İsteğe Bağlı):</label>
-                <input type="url" id="website_url" placeholder="https://"pattern="https://.*" size="40" required />
+                <input type="url" id="website_url" placeholder="https://"pattern="https://.*" size="40" required  name="contactİnst"/>
                 <label>Linkened URL(İsteğe Bağlı):</label>
-                <input type="url" id="website_url" placeholder="https://"pattern="https://.*" size="40" required />
+                <input type="url" id="website_url" placeholder="https://"pattern="https://.*" size="40" required name="contactLinke"/>
                 <label>Facebook URL(İsteğe Bağlı):</label>
-                <input type="url" id="website_url" placeholder="https://"pattern="https://.*" size="40" required />
+                <input type="url" id="website_url" placeholder="https://"pattern="https://.*" size="40" required name="contactFace"/>
+
+                <input type="hidden" name="formType" value="contactForm">
 
                 <input type="submit" value="Submit">
                 <input type="reset">
@@ -198,10 +222,8 @@
         
 </div>
 
-
     <script src="{% static 'js/hamburgerMenuScripts.js' %}"></script>
     <script src="{% static 'js/menuForm.js' %}"></script>
-    
     
 </body>
 </html>

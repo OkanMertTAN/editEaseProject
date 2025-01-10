@@ -1,7 +1,10 @@
 from django.contrib import admin
+from .models import database_form_db  # Model adınızı burada kontrol edin.
 
-# Register your models here.
-from .models import Common_database
+# Eğer modelin ismi gerçekten 'database_form_db' ise, doğru yazılmış olmalı.
+admin.site.register(database_form_db) 
 
-# Modeli admin paneline kaydedin
-admin.site.register(Common_database)
+
+
+
+
