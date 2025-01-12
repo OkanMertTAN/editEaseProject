@@ -82,8 +82,8 @@ WSGI_APPLICATION = 'editEaseProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'database_form_db',  # Veritabanı adı
-        'USER': 'user2',  # MySQL kullanıcı adı
+        'NAME': 'database_CMS_db',  # Veritabanı adı
+        'USER': 'userForm_1',  # MySQL kullanıcı adı
         'PASSWORD': '1234',  # MySQL şifresi
         'HOST': '127.0.0.1',  # MySQL sunucu adresi
         'PORT': '3306',  # Varsayılan MySQL portu
@@ -142,6 +142,21 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # Proje genelindeki static klasörü
+    os.path.join(BASE_DIR, 'webSites/static'),  # webSites uygulamasına özel static klasör
+]
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
 MEDIA_URL = '/media/'  # Fotoğraflara tarayıcıdan erişmek için
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Fotoğrafların fiziksel olarak saklanacağı dizin
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')  # Fotoğrafların fiziksel olarak saklanacağı dizin
+
+
 

@@ -1,60 +1,112 @@
-from .models import database_form_db
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from django.shortcuts import render
-
+from .models import (
+    ContactForm, 
+    ServiceForm, 
+    ReferenceForm, 
+    AboutForm, 
+    PersonnelForm, 
+    HomepageContentForm, 
+    GalleryForm,
+    ContactFormSocialMedia,
+    HomepageFotoForm
+)
 
 def cmsDashboard(request):
-    #return HttpResponse("Hello world!")
     return render(request, 'cmsHomePage.html')
 
+def cmsStatus(request):
+    return render(request, 'cmsStatus.html')
+
 def cmsContentsUpdate(request):
-    
-    if request.method == 'POST': 
-        formType = request.POST.get('formType','')
+    if request.method == 'POST':
+        formType = request.POST.get('formType', '')
 
-        fotoName = request.POST.get('fotoName','')
-        statementWeb = request.POST.get('statementWeb','')
-        fotoFile = request.FILES.get('fotoFile')
-        optionWeb = request.POST.get('optionWeb','')
+        if formType == 'contactForm':
 
-        mainText = request.POST.get('mainText','')
-        mainDescText = request.POST.get('mainDescText','')
+            contactName=request.POST.get('contactName', '')
+            contactAdress=request.POST.get('contactAdress', '')
+            contactTel=request.POST.get('contactTel', '')
+            contactFaks=request.POST.get('contactFaks', '')
+            
 
-        anaSayfaFoto = request.FILES.get('anaSayfaFoto','')
+            ContactForm.objects.create(contactName=contactName,contactAdress=contactAdress,contactTel=contactTel, contactFaks=contactFaks).save()
 
-        personelName = request.POST.get('personelName','')
-        personelDesc = request.POST.get('personelDesc','')
-        personelFoto = request.FILES.get('personelFoto')
+            
+           
+        elif formType == 'contactFormSocialMedia':
 
-        aboutText = request.POST.get('aboutText','')
-        aboutFile = request.POST.get('aboutFile','')
+            contactİnst=request.POST.get('contactİnst', '')
+            contactLinke=request.POST.get('contactLinke', '')
+            contactFace=request.POST.get('contactFace', '')
 
-        referansName = request.POST.get('referansName','')
-        referansUrl = request.POST.get('referansUrl','')
+            new_ContactFormSocialMedia = ContactFormSocialMedia.objects.create(contactİnst=contactİnst,contactLinke=contactLinke,contactFace=contactFace)
+            new_ContactFormSocialMedia.save()
 
-        serviceName = request.POST.get('serviceName','')
-        serviceFoto = request.FILES.get('serviceFoto')
-        serviceDesc = request.POST.get('serviceDesc','')
+        elif formType == 'serviceForm':
 
-        contactName = request.POST.get('contactName','')
-        contactAdress = request.POST.get('contactAdress','')
-        contactTel = request.POST.get('contactTel','')
-        contactFaks = request.POST.get('contactFaks','')
+            serviceName=request.POST.get('serviceName', '')
+            serviceFoto=request.FILES.get('serviceFoto', '')
+            serviceDesc=request.POST.get('serviceDesc', '')
 
-        contactİnst = request.POST.get('contactİnst','')
-        contactLinke = request.POST.get('contactLinke','')
-        contactFace = request.POST.get('contactFace','')
+            newServiceForm = ServiceForm.objects.create(serviceName=serviceName, serviceFoto=serviceFoto, serviceDesc=serviceDesc)
 
-        new_form = database_form_db(formType=formType, fotoName=fotoName, statementWeb=statementWeb, fotoFile=fotoFile, optionWeb=optionWeb, mainText=mainText, mainDescText=mainDescText, anaSayfaFoto=anaSayfaFoto, personelName=personelName, personelDesc=personelDesc, personelFoto=personelFoto, aboutText=aboutText, aboutFile=aboutFile, referansName=referansName, referansUrl=referansUrl, serviceName=serviceName, serviceFoto=serviceFoto, serviceDesc=serviceDesc, contactName=contactName, contactAdress=contactAdress, contactTel=contactTel, contactFaks=contactFaks, contactİnst=contactİnst, contactLinke=contactLinke, contactFace=contactFace)
+            newServiceForm.save()
 
-        new_form.save()
+        elif formType == 'referenceForm':
+
+            referansName=request.POST.get('referansName', '')
+            referansUrl=request.POST.get('referansUrl', '')
+            
+            new_ReferenceForm=ReferenceForm.objects.create(referansName=referansName, referansUrl=referansUrl)
+            new_ReferenceForm.save()
+
+        elif formType == 'aboutForm':
+
+            aboutText=request.POST.get('aboutText', '')
+            aboutFile=request.FILES.get('aboutFile', '')
+
+
+            new_AboutForm = AboutForm.objects.create(aboutFile=aboutFile, aboutText=aboutText)
+            new_AboutForm.save()
+
+        elif formType == 'personnelForm':
+
+            personelName=request.POST.get('personelName', '')
+            personelDesc=request.POST.get('personelDesc', '')
+            personelFoto=request.FILES.get('personelFoto', '')
+            
+            new_PersonnelForm = PersonnelForm.objects.create(personelName=personelName, personelDesc=personelDesc, personelFoto=personelFoto)
+            new_PersonnelForm.save()
+
+        elif formType == 'homepageContentForm':
+
+            mainText=request.POST.get('mainText')
+            mainDescText=request.POST.get('mainDescText')
+            
+            
+            new_HomepageContentForm=HomepageContentForm.objects.create(mainText=mainText, mainDescText=mainDescText)
+
+            new_HomepageContentForm.save()
+        
+        elif formType == 'homepageFotoForm':
+            anaSayfaFoto=request.FILES.get('anaSayfaFoto','')
+
+            new_HomepageFotoForm = HomepageFotoForm.objects.create(anaSayfaFoto=anaSayfaFoto)
+            new_HomepageFotoForm.save()
+
+
+        elif formType == 'otelForm':
+
+            fotoName=request.POST.get('fotoName', '')
+            statementWeb=request.POST.get('statementWeb', '')
+            fotoFile=request.FILES.get('fotoFile', '')
+            optionWeb=request.POST.get('optionWeb', '')
+
+            new_GalleryForm=GalleryForm.objects.create(fotoName=fotoName, statementWeb=statementWeb, fotoFile=fotoFile, optionWeb=optionWeb)
+            new_GalleryForm.save()
 
         return HttpResponseRedirect(reverse('cmsContentsUpdate'))
 
-    
     return render(request, 'cmsContentsUpdate.html', {})
-
-
-
-

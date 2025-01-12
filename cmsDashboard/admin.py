@@ -1,10 +1,15 @@
 from django.contrib import admin
-from .models import database_form_db  # Model adınızı burada kontrol edin.
+from .models import (
+    ContactForm, ServiceForm, ReferenceForm, AboutForm,
+    PersonnelForm, HomepageContentForm, GalleryForm, ContactFormSocialMedia, HomepageFotoForm
+)
 
-# Eğer modelin ismi gerçekten 'database_form_db' ise, doğru yazılmış olmalı.
-admin.site.register(database_form_db) 
-
-
-
-
-
+admin.site.register(ContactForm)
+admin.site.register(ServiceForm)
+admin.site.register(ReferenceForm)
+admin.site.register(AboutForm)
+admin.site.register(PersonnelForm)
+admin.site.register(HomepageContentForm)
+admin.site.register(GalleryForm)
+admin.site.register(ContactFormSocialMedia)
+admin.site.register(HomepageFotoForm)

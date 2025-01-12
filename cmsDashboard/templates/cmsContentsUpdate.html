@@ -27,7 +27,7 @@
         <br>
         <a href="{% url 'cmsDashboard' %}">Ana Sayfa</a>
         <a href="{% url 'cmsContentsUpdate' %}">İçerik Yönetim Paneli</a>
-        <a href="#">İçerikleri Gösterme</a>
+        <a href="{% url 'cmsStatus' %}">İçerikleri Gösterme</a>
         
         <a href="#">Çıkış</a>
     </div>
@@ -41,7 +41,7 @@
 <div>
     <h1 class="section-title" onclick="toggleMenu('galleryMenu')">Otel Tasarımları Ekle</h1>
     <div class="hidden-content" id="galleryMenu">
-        <form action="" method="POST"> {% csrf_token %}
+        <form action="" method="POST" enctype="multipart/form-data"> {% csrf_token %}
             <label>Otel Adı:</label>
             <input type="text" id="fotoName" name="fotoName"><br>
             
@@ -61,7 +61,7 @@
 
             <input type="hidden" name="formType" value="otelForm">
 
-            <input type="submit" value="Submit">
+            <input type="submit">
             <input type="reset">
         </form>
     </div>
@@ -71,16 +71,16 @@
     <h1 class="section-title" onclick="toggleMenu('anaSayfaMenu')">Ana Sayfa</h1>
     <div class="hidden-content" id="anaSayfaMenu">
         <h3>Ana Sayfa Ortası</h3>
-        <form action="" method="POST">{% csrf_token %}
+        <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
             {% csrf_token %}
             <label>Ana Sayfa Başlık:</label>
             <input type="text" name="mainText"><br>
             <label>Açıklama:</label>
             <textarea id="statementWeb" name="mainDescText" rows="4" cols="50" placeholder="Açıklama"></textarea>
 
-            <input type="hidden" name="formType" value="anaSayfaOrtaForm">
+            <input type="hidden" name="formType" value="homepageContentForm">
 
-            <input type="submit" value="Submit">
+            <input type="submit">
             <input type="reset">
         </form> 
     </div>
@@ -90,13 +90,13 @@
     <h1 class="section-title" onclick="toggleMenu('anaSayfaFotoMenu')">Ana Sayfa Foto</h1>
     <div class="hidden-content" id="anaSayfaFotoMenu">
         <h3>Ana Sayfa Ortası Foto</h3>
-        <form action="" method="POST"> {% csrf_token %}
+        <form action="" method="POST" enctype="multipart/form-data"> {% csrf_token %}
             <label>Ana Sayfa için Resim Yükle:</label>
             <input type="file" name="anaSayfaFoto"><br>
 
-            <input type="hidden" name="formType" value="anaSayfaFotoForm">
+            <input type="hidden" name="formType" value="homepageFotoForm">
 
-            <input type="submit" value="Submit">
+            <input type="submit">
             <input type="reset">
         </form>
     </div>
@@ -105,7 +105,7 @@
 <div>
     <h1 class="section-title" onclick="toggleMenu('anaSayfaPersonelMenu')">Çalışanlar Ekle</h1>
     <div class="hidden-content" id="anaSayfaPersonelMenu">
-        <form action="" method="POST"> {% csrf_token %}
+        <form action="" method="POST" enctype="multipart/form-data"> {% csrf_token %}
         <label>Çalışan Adı:</label>
         <input type="text" name="personelName"><br>
         <label>Mevkisi:</label>
@@ -117,9 +117,9 @@
         <label>Kişinin Fotosu:</label>
         <input type="file" name="personelFoto"><br>
         
-        <input type="hidden" name="formType" value="personelForm">
+        <input type="hidden" name="formType" value="personnelForm">
 
-        <input type="submit" value="Submit">
+        <input type="submit">
         <input type="reset">
     </form>
     </div>
@@ -130,7 +130,7 @@
 
     <div class="hidden-content" id="hakkimizdaMenu">
         <h3>Hakımızda</h3>
-        <form action="" method="POST"> {% csrf_token %}
+        <form action="" method="POST" enctype="multipart/form-data"> {% csrf_token %}
             
                 <label>Açıklama:</label>
                 <textarea rows="4" cols="50" placeholder="Açıklama" name="aboutText"></textarea><br>
@@ -139,7 +139,7 @@
 
                 <input type="hidden" name="formType" value="aboutForm">
 
-                <input type="submit" value="Submit">
+                <input type="submit">
                 <input type="reset">
         </form>
     </div>
@@ -154,9 +154,9 @@
             <label>Referanslar URL(İsteğe Bağlı):</label>
             <input type="url" placeholder="https://" pattern="https://.*" size="40" required  name="referansUrl"/> <br>
 
-            <input type="hidden" name="formType" value="referansForm">
+            <input type="hidden" name="formType" value="referenceForm">
 
-            <input type="submit" value="Submit">
+            <input type="submit">
             <input type="reset">
         </form>
     </div>
@@ -165,7 +165,7 @@
 <div>
     <h1 class="section-title" onclick="toggleMenu('servisMenu')">Servis</h1>
     <div class="hidden-content" id="servisMenu">
-    <form action="" method="POST"> {% csrf_token %}
+    <form action="" method="POST" enctype="multipart/form-data"> {% csrf_token %}
         <label>Adı:</label>
         <input type="text" name="serviceName"><br>
         <label>Foto:</label>
@@ -173,9 +173,9 @@
         <label>Açıklama:</label>
         <textarea id="statementWeb" name="serviceDesc" rows="4" cols="50" placeholder="Açıklama"></textarea>
 
-        <input type="hidden" name="formType" value="aboutForm">
+        <input type="hidden" name="formType" value="serviceForm">
 
-        <input type="submit" value="Submit">
+        <input type="submit">
         <input type="reset">
     </form>
 </div>
@@ -197,7 +197,7 @@
             
             <input type="hidden" name="formType" value="contactForm">
 
-            <input type="submit" value="Submit">
+            <input type="submit">
             <input type="reset">
         </form>
     </div>
@@ -213,7 +213,7 @@
                 <label>Facebook URL(İsteğe Bağlı):</label>
                 <input type="url" id="website_url" placeholder="https://"pattern="https://.*" size="40" required name="contactFace"/>
 
-                <input type="hidden" name="formType" value="contactForm">
+                <input type="hidden" name="formType" value="contactFormSocialMedia">
 
                 <input type="submit" value="Submit">
                 <input type="reset">

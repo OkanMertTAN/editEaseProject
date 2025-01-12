@@ -1,7 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from cmsDashboard.models import(
+    HomepageContentForm,
+    HomepageFotoForm
+)
 
 def webSites(request):
+
     return render(request, 'index.html')
     #return HttpResponse("Merhaba!")
 
