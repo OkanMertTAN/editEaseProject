@@ -13,7 +13,7 @@
   <meta name="author" content="" />
   <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/gif" />
 
-  <title>Shapel</title>
+  <title>Şirket 1</title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
@@ -39,11 +39,7 @@
   <header class="header_section innerpage_header">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-        <a class="navbar-brand" href="{% url 'webSites' %}">
-          <span>
-            Shapel
-          </span>
-        </a>
+        
         <div class="" id="">
 
           <div class="custom_menu-btn">
@@ -54,16 +50,20 @@
             </button>
             <div id="myNav" class="overlay">
               <div class="overlay-content">
-                <a href="{% url 'webSites' %}">Home</a>
-                <a href="{% url 'webSitesAbout' %}">About</a>
-                <a href="{% url 'webSitesGallery' %}">Gallery</a>
-                <a href="{% url 'webSitesService' %}">Service</a>
-                <a href="{% url 'webSitesBlog' %}">Blog</a>
+                <a href="{% url 'webSites' %}">Ana Sayfa</a>
+                <a href="{% url 'webSitesAbout' %}">Hakkımızda</a>
+                <a href="{% url 'webSitesGallery' %}">Projelerimiz</a>
+                <a href="{% url 'webSitesService' %}">Hizmetlerimiz</a>
+                <a href="{% url 'webSitesBlog' %}">İletişim</a>
               </div>
             </div>
           </div>
         </div>
       </nav>
+      <div class="user-panel">
+        <a href="{% url 'loginCMS' %}">
+            <img src="{% static 'images/user.png' %}" alt="userPanel" width="50px" height="50px">
+        </a>
     </div>
   </header>
   <!-- end header section -->
@@ -145,30 +145,28 @@
         <div class="col-md-6 col-lg-3">
           <div class="info_insta">
             <h4>
-              <a href="{% url 'webSites' %}" class="navbar-brand m-0 p-0">
-                <span>
-                  Shapel
-                </span>
-              </a>
+              alt başlık
             </h4>
             <p class="mb-0">
-              Asperiores at, error, delectus aut voluptatem provident cum quam magni necessitatibus molestias eveniet reprehenderit maiores voluptate.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non
+
             </p>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="info_detail">
             <h4>
-              Company
+              Şirket
             </h4>
             <p class="mb-0">
-              when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non
+
             </p>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
           <h4>
-            Contact Us
+            İtetişim
           </h4>
           <div class="info_contact">
             <a href="">
@@ -180,20 +178,20 @@
             <a href="">
               <i class="fa fa-phone" aria-hidden="true"></i>
               <span>
-                Call +01 1234567890
+                Call +0000000
               </span>
             </a>
             <a href="">
               <i class="fa fa-envelope"></i>
               <span>
-                demo@gmail.com
+                @gmail.com
               </span>
             </a>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
           <h4>
-            Follow Us
+            Sosyal Medyalar
           </h4>
           <div class="social_box">
             <a href="">
@@ -221,8 +219,8 @@
   <footer class="footer_section">
     <div class="container">
       <p>
-        &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
+        &copy; All Rights Reserved By
+        Okan Mert TAN
       </p>
     </div>
   </footer>

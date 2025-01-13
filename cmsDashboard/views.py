@@ -58,18 +58,18 @@ def cmsContentsUpdate(request):
             contactFaks=request.POST.get('contactFaks', '')
             
 
-            ContactForm.objects.create(contactName=contactName,contactAdress=contactAdress,contactTel=contactTel, contactFaks=contactFaks).save()
-
+            new_ContactForm = ContactForm.objects.create(contactName=contactName,contactAdress=contactAdress,contactTel=contactTel, contactFaks=contactFaks)
+            new_ContactForm.save()
             
-           
+
         elif formType == 'contactFormSocialMedia':
 
             contactİnst=request.POST.get('contactİnst', '')
             contactLinke=request.POST.get('contactLinke', '')
             contactFace=request.POST.get('contactFace', '')
 
-            new_ContactFormSocialMedia = ContactFormSocialMedia.objects.create(contactİnst=contactİnst,contactLinke=contactLinke,contactFace=contactFace)
-            new_ContactFormSocialMedia.save()
+            ContactFormSocialMedia.objects.filter(id=12).update(contactİnst=contactİnst, contactLinke=contactLinke, contactFace=contactFace)
+            
 
         elif formType == 'serviceForm':
 
@@ -95,8 +95,7 @@ def cmsContentsUpdate(request):
             aboutFile=request.FILES.get('aboutFile', '')
 
 
-            new_AboutForm = AboutForm.objects.create(aboutFile=aboutFile, aboutText=aboutText)
-            new_AboutForm.save()
+            AboutForm.objects.filter(id=9).update(aboutFile=aboutFile, aboutText=aboutText)
 
         elif formType == 'personnelForm':
 
@@ -113,9 +112,8 @@ def cmsContentsUpdate(request):
             mainDescText=request.POST.get('mainDescText')
             
             
-            new_HomepageContentForm=HomepageContentForm.objects.create(mainText=mainText, mainDescText=mainDescText)
+            HomepageContentForm.objects.filter(id=4).update(mainText=mainText, mainDescText=mainDescText)
 
-            new_HomepageContentForm.save()
         
         elif formType == 'homepageFotoForm':
             anaSayfaFoto=request.FILES.get('anaSayfaFoto','')

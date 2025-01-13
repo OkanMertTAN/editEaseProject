@@ -4,6 +4,7 @@
 
 @media (max-width: 991px) {
 
+
   .slider_section {
     min-height: auto;
   }
@@ -114,3 +115,4 @@
     max-width: 1170px;
   }
 }
+

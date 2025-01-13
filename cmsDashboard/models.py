@@ -4,9 +4,9 @@ from django.db import models
 # contactFormSocialMedia 
 
 class ContactFormSocialMedia(models.Model):
-    contactİnst = models.CharField(max_length=150, null=True, blank=False, default='DefaultValue')
-    contactLinke = models.CharField(max_length=150, null=True, blank=False, default='DefaultValue')
-    contactFace = models.CharField(max_length=150, null=True, blank=False, default='DefaultValue')
+    contactİnst = models.CharField(max_length=500, null=True, blank=False)
+    contactLinke = models.CharField(max_length=500, null=True, blank=False)
+    contactFace = models.CharField(max_length=500, null=True, blank=False)
 
     def __str__(self):
         return "Social Media"

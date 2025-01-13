@@ -993,3 +993,41 @@ a:focus {
 .user-panel img:hover {
   transform: scale(1.1); /* Üzerine gelindiğinde resmi %10 büyüt */
 }
+
+
+/* Div'i Ortalamak İçin */
+.centered-div {
+  display: flex;
+  justify-content: center; /* Yatayda ortalar */
+  align-items: center; /* Dikeyde ortalar */
+  min-height: 100vh; /* Yüksekliği ekranın tamamını kaplar */
+  width: 100%; /* Genişliği %100 yapar */
+  background-color: #f4f4f4; /* Arka plan rengi (isteğe bağlı) */
+}
+
+/* 1920x1080 çözünürlük için özel ayar */
+@media (min-width: 1920px) {
+  .centered-div {
+      /* 1920px ve üzeri ekranlarda ortalama için özel ayar */
+      max-width: 1920px;  /* 1920px genişlik için sınırlama */
+      margin: 0 auto;  /* Div'i ekranın ortasına yerleştirir */
+  }
+}
+
+/* Harita Konteyneri */
+.map-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* İframe Boyutları */
+iframe {
+  border: none;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+}
