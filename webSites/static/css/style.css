@@ -976,3 +976,20 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+
+.user-panel {
+  position: absolute; /* Elemanı serbest yerleştirme için */
+  top: 20px; /* Sayfanın üstünden 20px aşağı */
+  left: 20px; /* Sayfanın solundan 20px içeri */
+}
+
+.user-panel img {
+  cursor: pointer; /* Fare imlecini el işaretine dönüştür */
+  border-radius: 50%; /* Resmi yuvarlak yapar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+  transition: transform 0.3s ease; /* Hover animasyonu için */
+}
+
+.user-panel img:hover {
+  transform: scale(1.1); /* Üzerine gelindiğinde resmi %10 büyüt */
+}

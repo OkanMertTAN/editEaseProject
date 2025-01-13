@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('cmsDashboard.urls')),
     path('', include('webSites.urls')),
+    path('', include('loginCMS.urls')),
 ]
 
 

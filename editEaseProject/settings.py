@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cmsDashboard'
+    'cmsDashboard',
+    'loginCMS',
+    'webSites'
 ]
 
 MIDDLEWARE = [
@@ -60,6 +62,7 @@ TEMPLATES = [
         'DIRS': [
             BASE_DIR / 'templates',
             BASE_DIR / 'webSites/templates',
+            BASE_DIR / 'loginCMS/templates',
             ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -129,12 +132,7 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Proje genelindeki static klasörü
-    os.path.join(BASE_DIR, 'webSites/static'),  # webSites uygulamasına özel static klasör
-]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -147,6 +145,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  # Proje genelindeki static klasörü
     os.path.join(BASE_DIR, 'webSites/static'),  # webSites uygulamasına özel static klasör
+    os.path.join(BASE_DIR, 'loginCMS/static')
 ]
 
 # Default primary key field type

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoginCMS</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'loginStyleCMS.css' %}">
+
+</head>
+<body>
+    <div class="login-container">
+    <h1>Login</h1>
+    <form action="{% url 'loginCMS' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" class="input-field" placeholder="Kullanıcı Adı" required>
+        <input type="password" name="password" class="input-field" placeholder="Parola" required>
+    
+        <button type="submit" class="login-btn">Giriş Yap</button>
+        <button type="reset" class="login-btn">Temizle</button>
+    
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+    </form>
+    
+    </div>
+</body>
+</html>

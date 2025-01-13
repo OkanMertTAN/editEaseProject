@@ -39,13 +39,10 @@
   <header class="header_section">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-        <a class="navbar-brand" href="{% url 'webSites' %}">
-          <span>
-            Shapel
-          </span>
-        </a>
+       
+        
         <div class="" id="">
-
+          
           <div class="custom_menu-btn">
             <button onclick="openNav()">
               <span class="s-1"> </span>
@@ -64,6 +61,11 @@
           </div>
         </div>
       </nav>
+      <div class="user-panel">
+        <a href="{% url 'loginCMS' %}">
+            <img src="{% static 'images/user.png' %}" alt="userPanel" width="50px" height="50px">
+        </a>
+    </div>
     </div>
   </header>
   <!-- end header section -->

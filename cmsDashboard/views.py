@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .models import (
@@ -12,14 +12,41 @@ from .models import (
     ContactFormSocialMedia,
     HomepageFotoForm
 )
+def user_authenticated(request):
+    return 'user_authenticated' in request.session
+
+
+
+def logoutCMS(request):
+    # Oturum bilgisini temizle
+    request.session.flush()  # Oturum verilerini temizler
+    return redirect('loginCMS')  # Login sayfasına yönlendir
+
+
+
+
 
 def cmsDashboard(request):
+    if not user_authenticated(request):
+        return redirect('logoutCMS')  # Kullanıcı oturum açmamışsa login sayfasına yönlendir
+
+    
     return render(request, 'cmsHomePage.html')
 
 def cmsStatus(request):
+    if not user_authenticated(request):
+        return redirect('logoutCMS')  # Kullanıcı oturum açmamışsa login sayfasına yönlendir
+
+   
     return render(request, 'cmsStatus.html')
 
 def cmsContentsUpdate(request):
+    if not user_authenticated(request):
+        return redirect('logoutCMS')  # Kullanıcı oturum açmamışsa login sayfasına yönlendir
+
+
+    
+    
     if request.method == 'POST':
         formType = request.POST.get('formType', '')
 
